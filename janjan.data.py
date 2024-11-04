@@ -29,7 +29,29 @@ address=Entry(root,width=30)
 address.grid(row=3,column=1,padx=20)
 email=Entry(root,width=30)
 email.grid(row=4,column=1,padx=20)
+
+
+submit_btn+Button(root,text="Add record to Database",command=submit)
+submit_btn.grid(row=6,column=0,columnspan=2,pady=10,padx=10,ipadx=100)
+                
+def sumbit():
+
+    conn=sqlite3.connect("C:/Users/STUDENTS/janjan.data.py")
+c=conn.cusor()
+
+c. execute("INSERT INTO stuentinfo VALUES(:f_name ,l_name,:age,:address,:email)",
+           ({
+               
+ 'f_name':f_name.geet(),
+ 'l_name':l_name.geet(),
+ 'age':age.get()
+ 'address':address.get(),
+ 'email':email.get()
+ 
+ })
+        
+    
 conn.commit()
 conn.close()
-
+           
 root.mainloop()
